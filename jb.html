@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>HASS&Gaming-0123783040</title>
+    <title>HASS&Gaming</title>
     <style>
       html,
       body {
@@ -12,8 +12,6 @@
         min-height: 100vh;
         color: #c8ced8;
         font: 15px/1.45 "Segoe UI", system-ui, sans-serif;
-
-        /* إعدادات الخلفية المتناسقة مع index.html */
         background-color: #0b0d10;
         background-image: linear-gradient(rgba(11, 13, 16, 0.05), rgba(11, 13, 16, 0.05)), url('preview.jpg');
         background-repeat: no-repeat;
@@ -21,28 +19,49 @@
         background-size: cover;
         background-attachment: fixed;
       }
+
       #brand {
         text-align: center;
-        padding: 8px 10px;
-        background: rgba(14, 17, 22, 0.85);
-        border-bottom: 1px solid rgba(30, 39, 50, 0.7);
-      }
-      #brand img {
-        width: 28px;
-        height: 28px;
-        margin-right: 8px;
-        border-radius: 50%;
-        vertical-align: middle;
-      }
-      #brand b {
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
-        color: #e80725;
-        vertical-align: middle;
+        padding: 14px 10px 14px;
+        background: rgba(10, 12, 16, 0.9);
+        border-bottom: 1px solid rgba(232, 7, 37, 0.4);
+        transform: translateZ(0);
       }
 
-      /* running: a spinner under the brand. jb.js sets body.done / body.fail / body.log. */
+      /* جعل الشعار في سطر مستقل بالأعلى */
+      #brand img {
+        display: block;
+        margin: 0 auto 8px auto;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(232, 7, 37, 0.5);
+      }
+
+      /* اسم الهوست في سطر تحته */
+      #brand b {
+        display: block;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: #fff;
+        text-shadow: 
+          0 0 6px #e80725,
+          0 0 15px #e80725;
+      }
+
+      /* سطر الهاتف تحتهما */
+      #phone {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: .15em;
+        direction: ltr;
+        color: #e0f9ff;
+        text-shadow: 0 0 8px #00e5ff;
+      }
+
+      /* حلقة الانتظار المسرعة */
       #spin {
         position: fixed;
         top: calc(50% + 20px);
@@ -54,12 +73,16 @@
         border-top-color: #e80725;
         border-radius: 50%;
         animation: spin 0.9s linear infinite;
+        will-change: transform;
+        transform: translateZ(0);
       }
+
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
+
       #msg {
         position: fixed;
         top: 50%;
@@ -71,6 +94,7 @@
         letter-spacing: 0.5px;
         display: none;
       }
+
       #wrap {
         padding: 0;
       }
@@ -79,17 +103,15 @@
         display: none;
       }
 
-      body.done #spin {
-        display: none;
-      }
+      body.done #spin,
       body.fail #spin {
         display: none;
       }
-      body.fail #msg {
+      body.fail #msg,
+      body.done #msg {
         display: block;
       }
 
-      /* ?log=1 -- the full step log, styled like the landing. */
       body.log #spin,
       body.log #msg {
         display: none;
@@ -111,33 +133,23 @@
         border: 1px solid #1e2732;
         border-radius: 5px;
         padding: 10px 12px;
-        height: calc(100vh - 141px);
+        height: calc(100vh - 155px);
         overflow-y: auto;
       }
-      .ok {
-        color: #7fd0a0;
-      }
-      .bad {
-        color: #d08a7f;
-      }
-      .warn {
-        color: #d8c07f;
-      }
-      .safe {
-        color: #7fd0a0;
-      }
-      .danger {
-        color: #d08a7f;
-      }
-      code {
-        color: #9fb3d0;
-      }
+
+      .ok { color: #7fd0a0; }
+      .bad { color: #d08a7f; }
+      .warn { color: #d8c07f; }
+      .safe { color: #7fd0a0; }
+      .danger { color: #d08a7f; }
+      code { color: #9fb3d0; }
     </style>
   </head>
   <body>
     <div id="brand">
-      <img src="logo_raw.png" alt="Logo" width="28" height="28" />
+      <img src="logo_raw.png" alt="Logo" />
       <b>Hass&Gaming</b>
+      <div id="phone">TEL: +249 123 783 040</div>
     </div>
     <div id="spin"></div>
     <div id="msg">Restart your console</div>
