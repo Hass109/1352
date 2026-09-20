@@ -13,35 +13,37 @@
         color: #c8ced8;
         font: 15px/1.45 "Segoe UI", system-ui, sans-serif;
         background-color: #0b0d10;
-        background-image: linear-gradient(rgba(11, 13, 16, 0.05), rgba(11, 13, 16, 0.05)), url('preview.jpg');
+        background-image: linear-gradient(rgba(11, 13, 16, 0.05), rgba(11, 13, 16, 0.08)), url('preview.jpg');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
         background-attachment: fixed;
       }
 
+      /* تم إلغاء الخلفية والحدود بالكامل ليصبح شفافاً وعائماً */
       #brand {
         text-align: center;
-        padding: 14px 10px 14px;
-        background: rgba(10, 12, 16, 0.9);
-        border-bottom: 1px solid rgba(232, 7, 37, 0.4);
+        padding: 20px 10px 10px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
         transform: translateZ(0);
       }
 
-      /* جعل الشعار في سطر مستقل بالأعلى */
+      /* الشعار بدون حدود خارجية */
       #brand img {
         display: block;
-        margin: 0 auto 8px auto;
-        width: 38px;
-        height: 38px;
+        margin: 0 auto 10px auto;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
-        border: 1px solid rgba(232, 7, 37, 0.5);
+        border: none;
       }
 
-      /* اسم الهوست في سطر تحته */
+      /* نص الهوست بتأثير النيون الأحمر العائم */
       #brand b {
         display: block;
-        font-size: 32px;
+        font-size: 28px;
         font-weight: 900;
         letter-spacing: 0.12em;
         color: #fff;
@@ -50,11 +52,11 @@
           0 0 15px #e80725;
       }
 
-      /* سطر الهاتف تحتهما */
+      /* نص الهاتف بتأثير النيون السماوي العائم */
       #phone {
-        margin-top: 15px;
-        font-size: 20px;
-        font-weight: 800;
+        margin-top: 6px;
+        font-size: 14px;
+        font-weight: 700;
         letter-spacing: .15em;
         direction: ltr;
         color: #e0f9ff;
