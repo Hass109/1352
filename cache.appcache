@@ -1,12 +1,13 @@
 CACHE MANIFEST
-# v2026.09.20-gh-pages
+# v2026.09.20-fixed-offline
 
 CACHE:
 index.html
 jb.html
-preview.png
+preview.jpg
 logo_raw.png
 jb.js
+jb.js?v=10
 core.js
 mem.js
 int64.js
